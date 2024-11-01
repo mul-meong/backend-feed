@@ -36,5 +36,10 @@ out/
 ### VS Code ###
 .vscode/
 
+### Husky (node_modules) ###
+/node_modules/
+package-lock.json
+.DS_Store
+
 ### .yml files ###
 *.yml

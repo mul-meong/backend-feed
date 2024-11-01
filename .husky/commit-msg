@@ -1,0 +1,22 @@
+#!/bin/sh
+commit_message=$(head -n 1 "$1")
+
+if ! echo "$commit_message" | grep -Eq '^(🎉 init|:tada: init|'\
+'✨ feat|:sparkles: feat|'\
+'🐛 fix|:bug: fix|'\
+'💄 design|:lipstick: design|'\
+'🎨 style|:art: style|'\
+'📝 docs|:memo: docs|'\
+'♻️ refactor|:recycle: refactor|'\
+'✅ test|:white_check_mark: test|'\
+'👷 chore|:construction_worker: chore|'\
+'🚚 rename|:truck: rename|'\
+'🔥 remove|:fire: remove|'\
+'⚡️ improve|:zap: improve|'\
+'💩 poo|:poop: poo|'\
+'🍻 drunk|:beers: drunk|'\
+'👽 external|:alien: external|'\
+'🔀 merge|:twisted_rightwards_arrows: merge): .+$'; then
+    echo "Error: Commit message does not follow the convention!"
+    exit 1
+fi
